@@ -1,0 +1,6 @@
+#[DEFAULT CONFIG]
+#
+[login]
+baseurl = http://10.0.0.1
+username = administrator
+password = admin
