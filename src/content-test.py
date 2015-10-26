@@ -2,7 +2,7 @@ import logging
 import logging.config
 import requests
 import configparser
-from res.constants import *
+import src.constants
 
 login_token = ""
 
@@ -32,10 +32,10 @@ if __name__ == '__main__':
 	Init code for test - includes logging and configuration file setup
 	'''
 	config = configparser.ConfigParser()
-	config.read(CONFIG_FILE_PATH)
+	config.read(src.constants.CONFIG_FILE_PATH)
 	baseurl = config['login']['baseurl']
 	username = config['login']['username']
 	password = config['login']['password']
-	logging.config.fileConfig(LOG_CONFIG_FILE_PATH)
+	logging.config.fileConfig(src.constants.LOG_CONFIG_FILE_PATH)
 	logging.info('Test is now beginning.  Configuration section complete')
 	session = requests.Session();
